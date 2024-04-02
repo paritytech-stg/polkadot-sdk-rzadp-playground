@@ -9,6 +9,7 @@ homepage = "https://paritytech.github.io/polkadot-sdk/master/polkadot_sdk_docs/i
 resolver = "2"
 
 members = [
+	"umbrella",
 	"bridges/bin/runtime-common",
 	"bridges/chains/chain-asset-hub-rococo",
 	"bridges/chains/chain-asset-hub-westend",
