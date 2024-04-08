@@ -259,9 +259,9 @@ std = [
 	"xcm-fee-payment-runtime-api?/std"
 ]
 runtime = [
-	#"dep:asset-hub-rococo-runtime",
-	#"dep:asset-hub-westend-runtime",
-	#"dep:assets-common",
+	"dep:asset-hub-rococo-runtime",
+	"dep:asset-hub-westend-runtime",
+	"dep:assets-common",
 	#"dep:binary-merkle-tree",
 	#"dep:bp-asset-hub-rococo",
 	#"dep:bp-asset-hub-westend",
