@@ -34,7 +34,7 @@ sp-state-machine = { path = "../../primitives/state-machine", default-features =
 
 [features]
 default = ["historical", "std"]
-historical = ["sp-trie"]
+historical = ["dep:sp-trie"]
 std = [
 	"codec/std",
 	"frame-support/std",
