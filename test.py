@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 def builds():
-	p = subprocess.run(['cargo', 'remote', '--no-copy-lock', '--', 'b', '-p', 'minimal-template-runtime'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	p = subprocess.run(['cargo', 'c', '-p', 'minimal-template-runtime'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	return p.returncode == 0
 
 def test():
@@ -35,6 +35,8 @@ def test():
 		if not builds():
 			print(f"🔥 Line is bad  {i}: {line}")
 			bad_lines.append(i)
+
+	print(f"🔥 Bad lines:\n{bad_lines}")
 
 if __name__ == '__main__':
 	test()
