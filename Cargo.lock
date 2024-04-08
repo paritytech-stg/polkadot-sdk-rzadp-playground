@@ -8303,6 +8303,7 @@ dependencies = [
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
  "parity-scale-codec",
+ "polkadot-sdk",
  "polkadot-sdk-frame",
  "scale-info",
  "sp-genesis-builder",
