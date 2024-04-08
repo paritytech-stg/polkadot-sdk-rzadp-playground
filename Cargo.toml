@@ -10,6 +10,7 @@ resolver = "2"
 
 members = [
 	"umbrella",
+
 	"bridges/bin/runtime-common",
 	"bridges/chains/chain-asset-hub-rococo",
 	"bridges/chains/chain-asset-hub-westend",
@@ -261,13 +262,13 @@ members = [
 	"substrate/client/mixnet",
 	"substrate/client/network",
 	"substrate/client/network-gossip",
-	"substrate/client/network/bitswap",
 	"substrate/client/network/common",
 	"substrate/client/network/light",
 	"substrate/client/network/statement",
 	"substrate/client/network/sync",
 	"substrate/client/network/test",
 	"substrate/client/network/transactions",
+	"substrate/client/network/types",
 	"substrate/client/offchain",
 	"substrate/client/proposer-metrics",
 	"substrate/client/rpc",
@@ -332,6 +333,7 @@ members = [
 	"substrate/frame/examples/dev-mode",
 	"substrate/frame/examples/frame-crate",
 	"substrate/frame/examples/kitchensink",
+	"substrate/frame/examples/multi-block-migrations",
 	"substrate/frame/examples/offchain-worker",
 	"substrate/frame/examples/single-block-migrations",
 	"substrate/frame/examples/split",
@@ -492,6 +494,7 @@ members = [
 	"substrate/utils/frame/frame-utilities-cli",
 	"substrate/utils/frame/generate-bags",
 	"substrate/utils/frame/generate-bags/node-runtime",
+	"substrate/utils/frame/omni-bencher",
 	"substrate/utils/frame/remote-externalities",
 	"substrate/utils/frame/rpc/client",
 	"substrate/utils/frame/rpc/state-trie-migration-rpc",
@@ -514,7 +517,11 @@ members = [
 	"templates/parachain/pallets/template",
 	"templates/parachain/runtime",
 ]
-default-members = ["polkadot", "substrate/bin/node/cli"]
+default-members = [
+	"polkadot",
+	"substrate/bin/node/cli",
+	"umbrella",
+]
 
 [workspace.lints.rust]
 suspicious_double_ref_op = { level = "allow", priority = 2 }
@@ -558,6 +565,7 @@ serde_json = { version = "1.0.114", default-features = false }
 serde_yaml = { version = "0.9" }
 syn = { version = "2.0.53" }
 thiserror = { version = "1.0.48" }
+tracing-subscriber = { version = "0.3.18" }
 
 [profile.release]
 # Polkadot runtime requires unwinding.

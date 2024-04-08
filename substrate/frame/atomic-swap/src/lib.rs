@@ -58,6 +58,8 @@ use frame_system::pallet_prelude::BlockNumberFor;
 use scale_info::TypeInfo;
 use sp_io::hashing::blake2_256;
 use sp_runtime::RuntimeDebug;
+use sp_std::vec::Vec;
+use sp_std::vec;
 
 /// Pending atomic swap operation.
 #[derive(Clone, Eq, PartialEq, RuntimeDebugNoBound, Encode, Decode, TypeInfo, MaxEncodedLen)]

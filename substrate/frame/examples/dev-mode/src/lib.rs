@@ -30,6 +30,8 @@
 
 use frame_support::dispatch::DispatchResult;
 use frame_system::ensure_signed;
+use sp_std::vec::Vec;
+use sp_std::vec;
 
 // Re-export pallet items so that they can be accessed from the crate namespace.
 pub use pallet::*;

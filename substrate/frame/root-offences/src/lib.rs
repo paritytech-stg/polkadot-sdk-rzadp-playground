@@ -31,6 +31,8 @@ use pallet_session::historical::IdentificationTuple;
 use pallet_staking::{BalanceOf, Exposure, ExposureOf, Pallet as Staking};
 use sp_runtime::Perbill;
 use sp_staking::offence::{DisableStrategy, OnOffenceHandler};
+use sp_std::vec;
+use sp_std::vec::Vec;
 
 pub use pallet::*;
 
