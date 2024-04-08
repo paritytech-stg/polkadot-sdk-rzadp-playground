@@ -61,6 +61,8 @@ pallet-examples = { path = "./examples" }
 default = ["runtime", "std"]
 experimental = ["frame-support/experimental"]
 runtime = [
+	"frame-executive",
+	"frame-system-rpc-runtime-api",
 	"sp-api",
 	"sp-block-builder",
 	"sp-consensus-aura",
@@ -70,9 +72,6 @@ runtime = [
 	"sp-session",
 	"sp-transaction-pool",
 	"sp-version",
-
-	"frame-executive",
-	"frame-system-rpc-runtime-api",
 ]
 std = [
 	"frame-executive?/std",

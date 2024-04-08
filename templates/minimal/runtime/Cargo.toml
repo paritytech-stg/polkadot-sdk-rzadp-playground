@@ -21,6 +21,7 @@ frame = { package = "polkadot-sdk-frame", path = "../../../substrate/frame", def
 	"experimental",
 	"runtime",
 ] }
+polkadot-sdk = { path = "../../../umbrella", features = ["runtime"], default-features = false }
 
 # pallets that we want to use
 pallet-balances = { path = "../../../substrate/frame/balances", default-features = false }
@@ -42,19 +43,15 @@ substrate-wasm-builder = { path = "../../../substrate/utils/wasm-builder", optio
 [features]
 default = ["std"]
 std = [
-	"parity-scale-codec/std",
-	"scale-info/std",
-
 	"frame/std",
-
 	"pallet-balances/std",
+	"pallet-minimal-template/std",
 	"pallet-sudo/std",
 	"pallet-timestamp/std",
 	"pallet-transaction-payment-rpc-runtime-api/std",
 	"pallet-transaction-payment/std",
-
-	"pallet-minimal-template/std",
-
+	"parity-scale-codec/std",
+	"scale-info/std",
 	"sp-genesis-builder/std",
 	"sp-runtime/std",
 	"substrate-wasm-builder",

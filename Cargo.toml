@@ -9,6 +9,8 @@ homepage = "https://paritytech.github.io/polkadot-sdk/master/polkadot_sdk_docs/i
 resolver = "2"
 
 members = [
+	"umbrella",
+
 	"bridges/bin/runtime-common",
 	"bridges/chains/chain-asset-hub-rococo",
 	"bridges/chains/chain-asset-hub-westend",
@@ -515,7 +517,11 @@ members = [
 	"templates/parachain/pallets/template",
 	"templates/parachain/runtime",
 ]
-default-members = ["polkadot", "substrate/bin/node/cli"]
+default-members = [
+	"polkadot",
+	"substrate/bin/node/cli",
+	"umbrella",
+]
 
 [workspace.lints.rust]
 suspicious_double_ref_op = { level = "allow", priority = 2 }
