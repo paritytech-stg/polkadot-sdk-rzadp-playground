@@ -26,8 +26,8 @@ use polkadot_node_subsystem::{
 };
 use polkadot_node_subsystem_types::OverseerSignal;
 use polkadot_primitives::{
-	CandidateEvent, CandidateReceipt, CoreState, GroupIndex, IndexedVec, NodeFeatures,
-	OccupiedCore, SessionIndex, SessionInfo, ValidatorIndex,
+	AsyncBackingParams, CandidateEvent, CandidateReceipt, CoreState, GroupIndex, IndexedVec,
+	NodeFeatures, OccupiedCore, SessionIndex, SessionInfo, ValidatorIndex,
 };
 use sp_consensus_babe::Epoch as BabeEpoch;
 use sp_core::H256;
@@ -222,6 +222,15 @@ impl MockRuntimeApi {
 								.babe_epoch
 								.clone()
 								.expect("Babe epoch unpopulated")));
+						},
+						RuntimeApiMessage::Request(
+							_block_hash,
+							RuntimeApiRequest::AsyncBackingParams(sender),
+						) => {
+							let _ = sender.send(Ok(AsyncBackingParams {
+								max_candidate_depth: 1,
+								allowed_ancestry_len: 1,
+							}));
 						},
 						// Long term TODO: implement more as needed.
 						message => {
